@@ -103,10 +103,10 @@ function getObjectKeyCount(handleKeyCount) {
   // TODO: Your code goes here.
   
   var database = firebase.database();
-  var databaseVersionReference = database.ref('/db-search/array');
+  var databaseVersionReference = database.ref('/db-search/object');
   databaseVersionReference.once('value').then(function(snapshot) {
     var version = snapshot.val();
-    handleKeyCount(version);
+    handleKeyCount(Object.keys(version).length);
   });
   
 }
