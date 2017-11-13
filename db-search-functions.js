@@ -70,7 +70,7 @@ function getArrayJoin(handleJoin) {
   var databaseVersionReference = database.ref('/db-search/array');
   databaseVersionReference.once('value').then(function(snapshot) {
     var version = snapshot.val();
-    handleJoin(version);
+    handleJoin(version[0] + " " + version[1] + " " + version[2] + " " + version[3] + " " + version[4] + " " + version[5] + " " + version[6]);
   });
   
 }
@@ -94,7 +94,7 @@ function getObjectValue(handleValue) {
   var databaseVersionReference = database.ref('/db-search/object');
   databaseVersionReference.once('value').then(function(snapshot) {
     var version = snapshot.val();
-    handleValue(version);
+    handleValue("1) " + version.donkey + " 2) " + version.turkey + " 3) " + version.turnkey);
   });
   
 }
